@@ -1,8 +1,11 @@
 import reflex as rx
-# crear el componente principal de mi pagina
+from .componentes.navbar import navbar
+from .componentes.seccion import seccion
 def index ()->rx.components:
-    return rx.text("hola mundo")
+    return rx.box(
+        navbar(),
+        seccion()
+    )
 
-# instanciar la clase app de reflex
 app=rx.App()
 app.add_page(index)
